@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     if(image.isImage())
     {
         vector <vector <Pixel> > imagePixels = image.toPixelMatrix();
-        cout << " " << filename << " is " << imagePixels.size() << " pixels high and " << imagePixels[0].size() << " pixels wide" << endl;
+        cout << "" << filename << " is " << imagePixels.size() << " pixels high and " << imagePixels[0].size() << " pixels wide" << endl;
 
        for(int r = 0; r < imagePixels.size(); r++)
        {
@@ -37,6 +37,7 @@ int main(int argc, char* argv[])
                 Pixel color = imagePixels[r][c];
                 color.green = 0;
                 color.blue = 0;
+                imagePixels[r][c] = color;
            }
        }
        image.fromPixelMatrix( imagePixels );
